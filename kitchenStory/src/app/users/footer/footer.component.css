@@ -1,0 +1,13 @@
+footer{
+    margin-top: 3rem;
+    margin-bottom: 0rem;
+    text-align: center;
+}
+.admin{
+    padding-top: 2rem;
+    padding-right: 2rem;
+    text-align: right;
+}
+a{
+    text-decoration: none;
+}

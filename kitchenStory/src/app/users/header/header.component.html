@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <a class="navbar-brand" href="#">
+
+    Kitchen Story
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <form class="form-inline ml-auto my-lg-0" [formGroup]="searchForm"
+      (ngSubmit)="handelSearchSubmit(searchForm.value)">
+
+      <input class="form-control" formControlName="searchName" type="text" name="search" [(ngModel)]="searchText"
+        autocomplete="off" placeholder="Search By Name">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active" *ngIf="userFound==true">
+        <a class="nav-link" routerLink="/List">Home <span class="sr-only">(current)</span></a>
+      </li>
+
+
+      <li class="nav-item" *ngIf="userFound==null">
+        <a class="nav-link" routerLink="/userlogin">LogIn</a>
+      </li>
+      <li class="nav-item" *ngIf="userFound==true">
+        <a class="nav-link" routerLink="" (click)="logout()">LogOut </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/RegisterUser">Register</a>
+      </li>
+      <li class="nav-item" *ngIf="userFound==true">
+        <a class="nav-link" routerLink="/AddToCart">Cart</a>
+      </li>
+      <li class="nav-item" *ngIf="userFound==null">
+        <a class="nav-link" routerLink="/Admin">Admin</a>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+
+

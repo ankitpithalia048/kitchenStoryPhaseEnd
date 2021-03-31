@@ -1,0 +1,41 @@
+<admin-header></admin-header>
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+    </div>
+
+    <div class="col align-self-center Iform"><br>
+      <h2 class="header">Item Details</h2>
+
+      <form [formGroup]="userForm" (ngSubmit)="AddItemSubmitted(userForm.value)">
+
+
+        <input type="text" formControlName="name" [ngClass]="{'invalid': formSubmitted && formControls.name.errors}"
+          placeholder="Name" />
+
+        <span *ngIf="formSubmitted && formControls.name.errors">UserName is Incorrect</span>
+        <br />
+        <br />
+        <input type="number" formControlName="price" [ngClass]="{'invalid': formSubmitted && formControls.price.errors}"
+          placeholder="Price" />
+
+        <span *ngIf="formSubmitted && formControls.price.errors">Price should be a number</span>
+        <br><br>
+
+        <input type="text" formControlName="description"
+          [ngClass]="{'invalid': formSubmitted && formControls.description.errors}" placeholder="Description" />
+        <span *ngIf="formSubmitted && formControls.description.errors">Please Enter a descriptiont</span>
+        <br><br>
+        <button type="submit" name="submit" class="btn Ibutton">Submit</button>
+      </form>
+    </div>
+    <div class="col"></div>
+
+
+    
+
+
+
+  </div>
+</div>
